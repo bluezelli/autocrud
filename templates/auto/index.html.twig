@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AutoController!{% endblock %}
+
+{% block body %}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Nummber</th>
+        <th scope="col">model</th>
+        <th scope="col">type</th>
+        <th scope="col">kleur</th>
+        <th scope="col">gewicht</th>
+        <th scope="col">prijs</th>
+        <th scope="col">voorraad</th>
+    </tr>
+    </thead>
+
+    {% for data in autodatas %}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{ data.id }}</td>
+            <td>{{ data.model }}</td>
+            <td>{{ data.type }}</td>
+            <td>{{ data.kleur }}</td>
+            <td>{{ data.gewicht }}</td>
+            <td>{{ data.prijs }}</td>
+            <td>{{ data.voorraad }}</td>
+            <td>
+                <a href="{{ path('app_details', {id:data.id}) }}" class="btn btn-primary">Details</a>
+            </td>
+            <td>
+                <a href="{{ path('app_delete', {id:data.id}) }}" class="btn btn-primary">Details</a>
+            </td>
+            <td>
+                <a href="{{ path('app_update', {id:data.id}) }}" class="btn btn-primary">Details</a>
+            </td>
+
+
+        </tr>
+
+    {% endfor %}
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
